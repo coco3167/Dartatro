@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class Target  : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
+        if (!other.TryGetComponent(out Dart dart))
+        {
+            return;
+        }
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        dart.StopDart();
+        Debug.Log("dart hit");
     }
 }
