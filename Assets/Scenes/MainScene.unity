@@ -432,6 +432,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1458672422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2755326757494860707, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+  m_PrefabInstance: {fileID: 2451358132905689676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795d067bceb1a8240b6e8b7a3bcfb69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!1001 &2451358132905689676
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 24814587859432329, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755326757494860707, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: dart
+      value: 
+      objectReference: {fileID: 4113762435674658281}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346033504327148756, guid: de26d6c6654371946b89058088b1dee0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de26d6c6654371946b89058088b1dee0, type: 3}
 --- !u!1001 &4113762435674658280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -440,6 +512,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2917834621578860110, guid: bacc895da6ca7cd419fadca8aea38c16, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1458672422}
     - target: {fileID: 7593132060290366035, guid: bacc895da6ca7cd419fadca8aea38c16, type: 3}
       propertyPath: m_Name
       value: Dart
@@ -489,6 +565,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bacc895da6ca7cd419fadca8aea38c16, type: 3}
+--- !u!114 &4113762435674658281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2917834621578860110, guid: bacc895da6ca7cd419fadca8aea38c16, type: 3}
+  m_PrefabInstance: {fileID: 4113762435674658280}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2fad897eb6215408a207db5dbe14d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dart
 --- !u!1001 &6990627870610410968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -555,3 +642,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 6990627870610410968}
   - {fileID: 4113762435674658280}
+  - {fileID: 2451358132905689676}
