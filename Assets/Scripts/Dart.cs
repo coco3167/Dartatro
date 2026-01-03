@@ -30,19 +30,20 @@ public class Dart : MonoBehaviour
             return;
 
         Vector2 cursorPos = Vector2.zero;
+        Vector3 worldPosition = Vector3.zero;
 
         switch (gameManager.CurrentControlScheme)
         {
             case "Keyboard&Mouse":
                 cursorPos = Mouse.current.position.value;
+                worldPosition = m_mainCamera.ScreenToWorldPoint(new Vector3(cursorPos.x, cursorPos.y, m_startPos.z));
                 break;
             
             case "Gamepad":
                 cursorPos = gameManager.gamepadPos;
+                worldPosition = m_mainCamera.ViewportToWorldPoint(new Vector3(cursorPos.x, cursorPos.y, m_startPos.z));
                 break;
         }
-        
-        Vector3 worldPosition = m_mainCamera.ScreenToWorldPoint(new Vector3(cursorPos.x, cursorPos.y, m_startPos.z));
         
         Vector3 lerpedPosition = Vector3.Lerp(m_rigidbody.position, worldPosition, dartRepositioningSpeed * Time.deltaTime);
         m_rigidbody.MovePosition(lerpedPosition);

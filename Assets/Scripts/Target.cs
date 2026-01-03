@@ -10,6 +10,5 @@ public class Target  : MonoBehaviour
         }
         
         dart.StopDart();
-        Debug.Log("dart hit");
     }
 }

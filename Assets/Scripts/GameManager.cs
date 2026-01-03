@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float gamepadSpeed;
     
     private PlayerInput m_playerInput;
+    private Vector2 m_gamepadCurrentMovement;
 
     public Vector2 gamepadPos { get; private set; }
 
@@ -24,6 +26,12 @@ public class GameManager : MonoBehaviour
         gamepadPos = Vector2.one/2;
     }
 
+    private void FixedUpdate()
+    {
+        gamepadPos += m_gamepadCurrentMovement;
+        gamepadPos = new Vector2(Mathf.Clamp01(gamepadPos.x), Mathf.Clamp01(gamepadPos.y));
+    }
+
     private void OnActionTriggered(InputAction.CallbackContext obj)
     {
         if (obj.started && obj.action == launchAction.action)
@@ -35,12 +43,16 @@ public class GameManager : MonoBehaviour
         if (obj.started && obj.action == restoreAction.action)
         {
             dart.RestoreDart();
+            gamepadPos = Vector2.one/2;
         }
 
-        if (obj.performed && obj.action == moveAction.action)
+        if (obj.action == moveAction.action)
         {
-            gamepadPos += obj.ReadValue<Vector2>() * gamepadSpeed;
-            gamepadPos = new Vector2(Mathf.Clamp01(gamepadPos.x), Mathf.Clamp01(gamepadPos.y));
+            if(obj.performed)
+                m_gamepadCurrentMovement = obj.ReadValue<Vector2>() * gamepadSpeed * Time.deltaTime;
+            
+            if(obj.canceled)
+                m_gamepadCurrentMovement = Vector2.zero;
         }
     }
     
